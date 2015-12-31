@@ -1,0 +1,14 @@
+prefix=/usr/local/Cellar/ffmpeg/2.5.3
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavfilter
+Description: FFmpeg audio/video filtering library
+Version: 5.2.103
+Requires: 
+Requires.private: libswscale >= 3.1.101, libpostproc >= 53.3.100, libavresample >= 2.1.0, libavformat >= 56.15.102, libavcodec >= 56.13.100, libswresample >= 1.1.100, libavutil >= 54.15.100
+Conflicts:
+Libs: -L${libdir}  -lavfilter 
+Libs.private: -framework QTKit -framework Foundation -framework QuartzCore -framework CoreVideo -framework Foundation -framework AVFoundation -framework CoreMedia -framework CoreGraphics -framework CoreFoundation -framework VideoDecodeAcceleration -framework QuartzCore -liconv -lxvidcore -L/usr/local/Cellar/x264/r2455/lib -lx264 -lvo-aacenc -lmp3lame -lfaac -lm -lbz2 -lz -pthread
+Cflags: -I${includedir}
